@@ -1,0 +1,92 @@
+
+.title{
+    text-align: center;
+    color: White;
+    background-color: red;
+    font-weight: bold;
+    font-size: 50px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
+.title img{
+    height: 500px;
+    margin-top: 20px;
+}
+
+.text{
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.f-container{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    object-fit: cover;
+    align-items: center;
+     f-item01 {flex: basis 25%;}
+    .f-item02 {flex-basis:25%;}
+    .f-item03 {flex-basis:25%;}
+    .f-item04 {flex-basis:25%;}
+}
+
+.f-container img{
+height: 200px;
+margin: auto;
+}
+
+.point2 img{
+    width: 200px;
+    margin-bottom: 50px;
+}
+
+.point3 img{
+    width: 200px;
+    margin-bottom: 50px;
+}
+
+.kekka img{
+    width: 150px;
+}
+
+
+.scoreboard{
+    text-align: center;
+}
+
+.shohoku{
+    color:red;
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+}
+
+.sannou{
+    color:rgb(2, 173, 185);
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 100px;
+    text-align: left;
+    display: inline-block;
+}
+
+
+.footer{
+    background-color: gray;
+    color: white;
+    text-align: right;
+    padding: 20px;
+}

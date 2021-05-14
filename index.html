@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSSの紐付け -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+
+    <!-- jQueryを入れる -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>バスケットボールゲーム</title>
+</head>
+
+<!-- タイトル -->  
+<header class="title">
+    <h1>SLAMDUNK<br> シュートチャレンジ</h1>
+    <img src="img/観客席.jpeg" alt="観客席">
+</header>
+
+<body>
+
+<main>
+
+    <div class="text">
+    たくさんシュートを打って山王工業を逆転しよう！<br>
+    桜木か三井が出ればシュート成功！<br>
+    シュート失敗すると山王興行の選手が出現し、山王工業に得点が入るぞ！
+    </div>
+
+<!-- ２点シュートの枠を作る桜木花道 -->    
+
+<div class="f-container">
+<div id="point2">
+    <button id="btn2">２点シュートを打つ</button>
+    <img src="img/桜木シュート.jpeg" alt="桜木シュート">
+</div>
+<p id="sakuragi"></p>
+
+
+<!-- ３点シュートの枠を作る三井寿-->  
+<div id="point3">
+<button id="btn3">3点シュートを打つ</button>
+<img src='img/三井シュート.jpeg' alt="三井シュート">
+</div>
+<p id="mitsui"></p>
+</div>
+
+<!-- お互いの点数を表示する-->  
+<div class="scoreboard">
+<div class="shohoku">湘北高校：<span id="shohokupoint">60</span></div> <br>
+<div class="sannou"> 山王工業：<span id="sannoupoint">67</span></div> 
+</div>
+
+</main>
+
+<!-- ここからJavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+
+
+  
+// <!-- ここからは２点の桜木花道 -->    
+
+$("#btn2").on("click",function(){
+
+// <!-- 乱数 -->  
+const shoot2 = Math.floor(Math.random()*3 + 1);
+
+// <!-- ifで分岐処理 -->  
+
+let view = "";
+
+
+    if(shoot2 == 1){
+    view= '<img src = img/河田ブロック.jpeg>';
+    }
+
+    else{
+    view= '<img src = img/桜木成功.jpeg>';
+    }
+
+// <!-- 表示処理 -->  
+$("#sakuragi").html(view);
+});
+
+
+
+// <!-- ここからは３点の三井寿 -->    
+
+$("#btn3").on("click",function(){
+
+// <!-- 乱数 -->  
+
+const shoot3 = Math.floor(Math.random()*3 + 1);
+
+// <!-- ifで分岐処理 -->  
+
+let view = "";
+
+    if(shoot3 == 1){
+    view= '<img src = img/一ノ倉すっぽんディフェンス.jpeg>';
+    }
+
+    else if(shoot3 == 2){
+    view= '<img src = img/一ノ倉すっぽんディフェンス.jpeg>';
+    }
+
+    else{
+    view= '<img src = img/三井成功.jpeg>';
+    }
+
+
+let view2 = "";
+
+    if(shoot3 == 1){
+    view2 = "シュート失敗";
+    }
+
+    else if(shoot3 == 2){
+    view2 = "シュート失敗";
+    }
+
+    else{
+    view2 = "シュート成功";
+    }
+
+
+// <!-- 表示処理 -->  
+$("#mitsui").html(view,view2);
+});
+
+console.log("#view2")
+
+
+  // 点数を加算していくエリア
+  // グローバル変数で加算ポイントを定義
+
+  let shohokutwopoint = +2
+  let shohokuthreepoint = +3
+  let sannoupoint = +2
+  console.log(shohokutwopoint)
+  console.log(shohokuthreepoint)
+  console.log(sannoupoint)
+
+
+// //   ボタンクリックで加算させる
+
+// <input type="button" value="point"
+//     onclick="shohokupoint = 60; shohokutwopoint = 2; shohoku = shohokupoint + shohokutwopoint; target = document.getElementById('output'); target.innerHTML=shohokupoint;" /><br />
+//   <br />
+//   <div id="output"></div>
+
+
+
+
+
+//   グローバル変数を反映させる
+
+
+
+
+
+// window.onload = function(){
+
+
+// //２点シュートの結果
+// var btn_02 = document.getElementById("btn2");
+// ("btn2").onclick = function(){
+// var num=shoot2(3);
+// if(num==1){
+// document.getElementById("name").innerHTML="シュート失敗・・・";
+// PointCom +2;
+// }
+// else if(num==2){
+// document.getElementById("name").innerHTML="シュート成功！！";
+// PointMe +2;
+// }
+// else if(num==3){
+// document.getElementById("name").innerHTML="シュート成功！！"; 
+// PointMe +2;
+// }
+// }
+
+// //３点シュートの結果
+// var btn_03 = document.getElementById("btn3");
+// ("btn3").onclick = function(){
+// var num=shoot3(3);
+// if(num==1){
+// document.getElementById("name").innerHTML="シュート失敗・・・";
+// PointCom +2;
+// }
+// else if(num==2){
+// document.getElementById("name").innerHTML="シュート失敗・・・";
+// PointCom +2;
+// }
+// else if(num==3){
+// document.getElementById("name").innerHTML="シュート成功！！"; 
+// PointMe +3;
+// }
+// }
+
+
+
+
+
+</script>
+
+<div class="footer"><footer>SLAM DUNK All Rights Reserved</footer></div>
+</body>
+</html>
